@@ -1,0 +1,11 @@
+# 184MB，超过 GitHub 单文件 100MB 硬上限，推不上去
+main_website/photo/video.mp4
+
+# 编辑器
+.vscode/
+.idea/
+*.iml
+
+# 压缩包备份
+*.zip
+*.rar
