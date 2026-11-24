@@ -1,681 +1,765 @@
-        /* 本页丝滑跳转 1*/
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        a {
-            cursor: pointer;
-        }
-
-        /* 本页丝滑跳转 */
-
-        /* 标题和视频部分  */
-
-        .guide {
-            position: relative;
-            width: 100vw;
-            height: 56.25vw;
-            overflow: hidden;
-            transition: height 0.5s ease;
-        }
-
-        .guide-video {
-            width: 100%;
-            height: 100%;
-            transition: transform 0.5s ease;
-            object-fit: cover;
-        }
-
-
-
-        #title {
-            position: fixed;
-            display: flex;
-            justify-content: center;
-            gap: 30%;
-            width: 100%;
-            align-items: center;
-            z-index: 31;
-            background-color: rgba(255, 255, 255, 0.08);
-            line-height: 80px;
-        }
-
-        .nav-logo {
-            color: #ffffff;
-            font-size: 42px;
-            font-weight: bold;
-        }
-
-        .nav-box {
-            display: flex;
-            gap: 36px;
-        }
-
-        .nav-box a {
-            color: #eeeeee;
-            text-decoration: none;
-            font-size: 26px;
-        }
-
-        .nav-box a:hover {
-            opacity: 0.7;
-        }
-
-        /* 标题和视频部分  */
-
-
-        /* 常见自然灾害 */
-
-        #comon_diaster {
-            display: flex;
-            justify-content: center;
-            max-width: 1300px;
-            margin: 0 auto;
-            gap: 20px;
-            zoom: 102%;
-        }
-
-        .wrap {
-            display: flex;
-            gap: 10px;
-            /* background-color: rgb(68, 117, 85); */
-            width: 100%;
-            overflow: hidden;
-            height: 280px;
-        }
-
-
-        .img-box {
-            /* 删去一句 */
-            /* background-color: azure; */
-            height: 360px;
-            width: 300px;
-            transition: 2s ease;
-            margin: 10px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .main_introduction {
-            position: absolute;
-            width: 100%;
-            top: 0;
-            left: 50%;
-            text-align: center;
-            transform: translateX(-50%);
-            white-space: nowrap;
-            font-size: 30px;
-            z-index: 3;
-            color: #fff;
-            background: rgba(0, 0, 0, 0.1);
-        }
-
-        .disaster-tip {
-            position: absolute;
-            top: 60px;
-            /* left: 21.5%; */
-            left: 19%;
-            right: 19%;
-            opacity: 0;
-            color: rgb(10, 0, 0);
-            font-size: 5px;
-            /* text-align: center;
-            align-items: center; */
-            z-index: 3;
-            line-height: 1.5;
-            /* filter:brightness() ; */
-        }
-
-        .img-box:hover .disaster-tip {
-            opacity: 1;
-            /* filter: brightness(0.7); */
-            transition: 1.4s ease-out;
-            color: rgb(248, 245, 245);
-            font-size: 15px;
-            text-align: center;
-            align-items: center;
-            z-index: 3;
-            line-height: 1.5;
-            position: absolute;
-        }
-
-        .img-box img {
-            position: absolute;
-            /* 修改一句 */
-            height: 280px;
-            aspect-ratio: 7/4;
-            object-fit: cover;
-            object-position: center;
-            width: 100%;
-            overflow: hidden;
-            z-index: 2;
-        }
-
-        .img-box:hover img {
-            /* 亮度变为原来的0.65倍 */
-            filter: brightness(0.65);
-            /* 亮度变为原来的0.65倍 */
-            transition: 2s ease;
-        }
-
-        .img-box:hover {
-            width: 1190px;
-            /* filter: brightness(0.8); */
-        }
-
-
-        /* 常见自然灾害 */
-
-
-
-
-
-
-
-        /* 其他版面样式 */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-
-            background-color: #F5F7FA;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        img {
-            display: block;
-        }
-
-        .bottom {
-            overflow: hidden;
-            background-color: rgb(217, 230, 241);
-            transition: height 0.4s ease;
-            cursor: pointer;
-        }
-
-        #all_content {
-            max-width: 90%;
-            margin: 20px auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            zoom: 115%;
-
-        }
-
-
-
-        .new,
-        .comon_diaster_title {
-            width: 1040px;
-            zoom: 115%;
-        }
-
-        .comon_diaster_title h2 {
-            padding-left: 8px;
-            background-color: transparent;
-
-        }
-
-        .box2 {
-            zoom: 115%;
-            justify-content: space-between;
-        }
-
-        .box3 {
-            border-radius: 5px;
-            width: 500px;
-            height: 450px;
-            overflow: hidden;
-
-        }
-
-        .bottom img {
-            width: 500px;
-            height: 300px;
-            object-fit: cover;
-        }
-
-        .bottomword {
-            width: 500px;
-            height: 150px;
-            transition: 0.3s;
-        }
-
-        .bottomphoto {
-            width: 500px;
-            height: 300px;
-            overflow: hidden;
-        }
-
-        .bottom:hover img {
-            transform: scale(1.15);
-            transition: 0.5s;
-        }
-
-        .bottom:hover .bottomword {
-            background-color: rgb(234, 131, 58);
-        }
-
-        .bottom:hover .bottomword p {
-            color: white;
-
-        }
-
-
-        .title {
-            background-color: #F5F7FA;
-            padding-bottom: 10px;
-        }
-
-
-
-
-        /* 新闻 */
-        /* 右侧新闻 */
-        .upright {
-            background: #f9fafa;
-            width: 410px;
-            height: 421.875px;
-
-            position: relative;
-            border-radius: 12px;
-            padding: 18px 16px;
-            box-sizing: border-box;
-            border: 1px solid #e6ddd2;
-            box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
-
-        }
-
-        #upright_scroll {
-            width: 100%;
-            height: calc(100% - 70px);
-            overflow-x: hidden;
-            overflow-y: auto;
-            padding-right: 12px;
-
-        }
-
-        #upright_scroll::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        #upright_scroll::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0);
-            border-radius: 4px;
-            transition: background 0.3s ease;
-        }
-
-        /* 给滚动时的class：激活 */
-        #upright_scroll.active::-webkit-scrollbar-thumb {
-            background: rgba(0, 0, 0, 0.35);
-        }
-
-        .upright h3 {
-            color: #8b0000;
-            font-size: 25px;
-            font-weight: 700;
-            text-align: center;
-            margin: 7px 0 8px;
-            letter-spacing: 1px;
-        }
-
-        .upright h3::after {
-            content: "";
-            display: block;
-            width: 40px;
-            height: 3px;
-            background: linear-gradient(90deg, #c8102e, #ff4d4d);
-            margin: 8px auto 14px;
-            border-radius: 2px;
-        }
-
-        .upright ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .upright li {
-            width: 100%;
-            padding: 15px 12px;
-            border-bottom: 1px dashed rgba(139, 0, 0, 0.15);
-            transition: background 0.2s ease;
-            box-sizing: border-box;
-
-        }
-
-        .upright li:last-child {
-            border-bottom: none;
-        }
-
-        .upright li:hover {
-            background: #fff;
-        }
-
-        .upright a {
-            display: block;
-            color: #222;
-            font-size: 20px;
-            line-height: 1.6;
-            text-decoration: none;
-            position: relative;
-            padding-left: 16px;
-
-        }
-
-        .upright a::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background-color: #c8102e;
-        }
-
-        .upright a:hover {
-            color: #c8102e;
-        }
-
-        /* 右侧新闻 */
-
-
-        /* 左侧新闻 */
-        .box1,
-        .box2 {
-            display: flex;
-            /* 水平方向 */
-            justify-content: flex-start;
-            align-items: flex-start;
-            margin: 20px 15vw;
-            gap: 40px;
-            position: relative;
-        }
-
-        .upleft {
-            width: 750px;
-            height: 421.875px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            box-sizing: border-box;
-            overflow: hidden;
-            position: relative;
-
-        }
-
-
-
-        #new_img {
-            width: 750px;
-            height: 421.875px;
-            display: flex;
-            transition: transform 0.4s ease;
-        }
-
-        .wrap-item {
-            flex: 0 0 750px;
-            height: 421.875px;
-        }
-
-        #new_img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .upleft::after {
-            /* 伪元素必填，没有就不渲染 */
-
-            content: "";
-            position: absolute;
-            /* 铺满父盒子 */
-
-            inset: 0;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 2;
-            /* 不挡住点击 */
-
-            pointer-events: none;
-        }
-
-
-
-        /* 左中部分的核心文字 */
-
-        #upleft_text {
-            position: absolute;
-            left: 30px;
-            top: 120px;
-            width: 600px;
-            height: 300px;
-            z-index: 3;
-            pointer-events: none;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        /* 持续更新·直击现场 */
-
-        #upleft_text_soild {
-            font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            line-height: 1;
-            letter-spacing: 1.6px;
-            color: #facea6;
-            /* 浅杏橙填充 */
-            text-shadow:
-                0 0 2px rgba(249, 185, 123, 0.75),
+/* 本页丝滑跳转 1*/
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    cursor: pointer;
+}
+
+/* 本页丝滑跳转 */
+
+/* 标题和视频部分  */
+
+.guide {
+    position: relative;
+    width: 100vw;
+    height: 56.25vw;
+    overflow: hidden;
+    transition: height 0.5s ease;
+}
+
+.guide-video {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease;
+    object-fit: cover;
+}
+
+
+.slide_introduction {
+    position: absolute;
+    bottom: 15%;
+    left: 50%;
+    background: rgba(0, 0, 0, var(--transparent));
+    transform: translateX(-50%);
+    color: white;
+    opacity: 1;
+    transition: 1s;
+}
+
+.slide_tltle {
+    font-size: 5vh;
+    color: #e5dede;
+    letter-spacing: 0.4em;
+    font-weight: 500;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.35);
+    margin-bottom: 3vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.slide_detail {
+    font-size: 2.2vh;
+    color: rgba(255, 255, 255, 0.82);
+    letter-spacing: 0.18em;
+    font-weight: 400;
+
+    margin-bottom: 2vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide_lead {
+    font-size: 1.8vh;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 0.12em;
+    animation: bounce 1.8s infinite ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide_logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2vh;
+    animation-name: logo;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes logo {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(1vh);
+    }
+
+}
+
+.slide_logo img {
+
+    width: 3vh;
+    height: 3vh;
+}
+
+/* 上方标题的背景  用transparent动态调整透明度 */
+
+#title {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    gap: 30%;
+    width: 100%;
+    align-items: center;
+    z-index: 31;
+    background: rgba(0, 0, 0, var(--transparent));
+    line-height: 80px;
+
+
+}
+
+/* 下方的标题背景  js动态添加该标签*/
+#title.is_brightness {
+    background: linear-gradient(to right, #0f1439, #1a2460, #0f1439);
+    --transparent: 1;
+}
+
+
+
+.nav-logo {
+    color: #ffffff;
+    font-size: 42px;
+    font-weight: bold;
+}
+
+.nav-box {
+    display: flex;
+    gap: 36px;
+}
+
+.nav-box a {
+    color: #eeeeee;
+    text-decoration: none;
+    font-size: 26px;
+}
+
+.nav-box a:hover {
+    opacity: 0.7;
+}
+
+/* 标题和视频部分  */
+
+
+/* 常见自然灾害 */
+
+#common_diaster {
+    display: flex;
+    justify-content: center;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 20px;
+    zoom: 102%;
+}
+
+.wrap {
+    display: flex;
+    gap: 10px;
+    /* background-color: rgb(68, 117, 85); */
+    width: 100%;
+    overflow: hidden;
+    height: 280px;
+}
+
+
+.img-box {
+    /* 删去一句 */
+    /* background-color: azure; */
+    height: 360px;
+    width: 300px;
+    transition: 2s ease;
+    margin: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.main_introduction {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    text-align: center;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 30px;
+    z-index: 3;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+.disaster-tip {
+    position: absolute;
+    top: 60px;
+    /* left: 21.5%; */
+    left: 19%;
+    right: 19%;
+    opacity: 0;
+    color: rgb(10, 0, 0);
+    font-size: 5px;
+    /* text-align: center;
+    align-items: center; */
+    z-index: 3;
+    line-height: 1.5;
+    /* filter:brightness() ; */
+}
+
+.img-box:hover .disaster-tip {
+    opacity: 1;
+    /* filter: brightness(0.7); */
+    transition: 1.4s ease-out;
+    color: rgb(248, 245, 245);
+    font-size: 15px;
+    text-align: center;
+    align-items: center;
+    z-index: 3;
+    line-height: 1.5;
+    position: absolute;
+}
+
+.img-box img {
+    position: absolute;
+    /* 修改一句 */
+    height: 280px;
+    aspect-ratio: 7/4;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+}
+
+.img-box:hover img {
+    /* 亮度变为原来的0.65倍 */
+    filter: brightness(0.65);
+    /* 亮度变为原来的0.65倍 */
+    transition: 2s ease;
+}
+
+.img-box:hover {
+    width: 1190px;
+    /* filter: brightness(0.8); */
+}
+
+
+/* 常见自然灾害 */
+
+
+
+
+
+
+
+/* 其他版面样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background-color: #F5F7FA;
+    overflow-x: hidden;
+    position: relative;
+}
+
+img {
+    display: block;
+}
+
+.bottom {
+    overflow: hidden;
+    background-color: rgb(217, 230, 241);
+    transition: height 0.4s ease;
+    cursor: pointer;
+}
+
+#all_content {
+    max-width: 90%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    zoom: 115%;
+
+}
+
+
+
+.new,
+.common_diaster_title {
+    width: 1040px;
+    zoom: 115%;
+}
+
+.common_diaster_title h2 {
+    padding-left: 8px;
+    background-color: transparent;
+
+}
+
+.box2 {
+    zoom: 115%;
+    justify-content: space-between;
+}
+
+.box3 {
+    border-radius: 5px;
+    width: 500px;
+    height: 450px;
+    overflow: hidden;
+
+}
+
+.bottom img {
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
+}
+
+.bottomword {
+    width: 500px;
+    height: 150px;
+    transition: 0.3s;
+}
+
+.bottomphoto {
+    width: 500px;
+    height: 300px;
+    overflow: hidden;
+}
+
+.bottom:hover img {
+    transform: scale(1.15);
+    transition: 0.5s;
+}
+
+.bottom:hover .bottomword {
+    background-color: rgb(234, 131, 58);
+}
+
+.bottom:hover .bottomword p {
+    color: white;
+
+}
+
+
+.title {
+    background-color: #F5F7FA;
+    padding-bottom: 10px;
+}
+
+
+
+
+/* 新闻 */
+/* 右侧新闻 */
+.upright {
+    background: #f9fafa;
+    width: 410px;
+    height: 421.875px;
+
+    position: relative;
+    border-radius: 12px;
+    padding: 18px 16px;
+    box-sizing: border-box;
+    border: 1px solid #e6ddd2;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+
+}
+
+#upright_scroll {
+    width: 100%;
+    height: calc(100% - 70px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-right: 12px;
+
+}
+
+#upright_scroll::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+#upright_scroll::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0);
+    border-radius: 4px;
+    transition: background 0.3s ease;
+}
+
+/* 给滚动时的class：激活 */
+#upright_scroll.active::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.35);
+}
+
+.upright h3 {
+    color: #8b0000;
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+    margin: 7px 0 8px;
+    letter-spacing: 1px;
+}
+
+.upright h3::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 3px;
+    background: linear-gradient(90deg, #c8102e, #ff4d4d);
+    margin: 8px auto 14px;
+    border-radius: 2px;
+}
+
+.upright ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.upright li {
+    width: 100%;
+    padding: 15px 12px;
+    border-bottom: 1px dashed rgba(139, 0, 0, 0.15);
+    transition: background 0.2s ease;
+    box-sizing: border-box;
+
+}
+
+.upright li:last-child {
+    border-bottom: none;
+}
+
+.upright li:hover {
+    background: #fff;
+}
+
+.upright a {
+    display: block;
+    color: #222;
+    font-size: 20px;
+    line-height: 1.6;
+    text-decoration: none;
+    position: relative;
+    padding-left: 16px;
+
+}
+
+.upright a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: #c8102e;
+}
+
+.upright a:hover {
+    color: #c8102e;
+}
+
+/* 右侧新闻 */
+
+
+/* 左侧新闻 */
+.box1,
+.box2 {
+    display: flex;
+    /* 水平方向 */
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px 15vw;
+    gap: 40px;
+    position: relative;
+}
+
+.upleft {
+    width: 750px;
+    height: 421.875px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-sizing: border-box;
+    overflow: hidden;
+    position: relative;
+
+}
+
+
+
+#new_img {
+    width: 750px;
+    height: 421.875px;
+    display: flex;
+    transition: transform 0.4s ease;
+}
+
+.wrap-item {
+    flex: 0 0 750px;
+    height: 421.875px;
+}
+
+#new_img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.upleft::after {
+    /* 伪元素必填，没有就不渲染 */
+
+    content: "";
+    position: absolute;
+    /* 铺满父盒子 */
+
+    inset: 0;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    /* 不挡住点击 */
+
+    pointer-events: none;
+}
+
+
+
+/* 左中部分的核心文字 */
+
+#upleft_text {
+    position: absolute;
+    left: 30px;
+    top: 120px;
+    width: 600px;
+    height: 300px;
+    z-index: 3;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* 持续更新·直击现场 */
+
+#upleft_text_soild {
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 1.6px;
+    color: #facea6;
+    /* 浅杏橙填充 */
+    text-shadow:
+            0 0 2px rgba(249, 185, 123, 0.75),
                 /* 橙色近距辉光 */
-                0 0 6px rgba(240, 150, 60, 0.45);
-            /* 橙色远距辉光 */
-            -webkit-text-stroke: 0;
-        }
+            0 0 6px rgba(240, 150, 60, 0.45);
+    /* 橙色远距辉光 */
+}
 
-        /* 持续更新·直击现场 */
+/* 持续更新·直击现场 */
 
-        /* 中间大白字 */
-        #upleft_text_title {
-            margin: 0;
-            font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
-            font-size: 30px;
-            font-weight: 700;
-            line-height: 1.35;
-            letter-spacing: -0.5px;
-            color: #ffffff;
-            text-shadow: none;
-            /* 无描边、无投影 */
-            transform: none;
+/* 中间大白字 */
+#upleft_text_title {
+    margin: 0;
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.5px;
+    color: #ffffff;
+    text-shadow: none;
+    /* 无描边、无投影 */
+    transform: none;
 
-        }
+}
 
-        /* 中间大白字 */
+/* 中间大白字 */
 
-        /* 中下描述字 */
+/* 中下描述字 */
 
-        #upleft_text_detail {
-            font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
-            font-size: 15px;
-            font-weight: 400;
-            line-height: 1.55;
-            letter-spacing: 1.3px;
-            color: #d2d4d5;
-            text-shadow: none;
-        }
+#upleft_text_detail {
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: 1.3px;
+    color: #d2d4d5;
+    text-shadow: none;
+}
 
-        /* 中下描述字 */
-
-
-
-        /* 左中部分的核心文字 */
+/* 中下描述字 */
 
 
 
-
-        #new_bottom {
-            padding-left: 50px;
-            letter-spacing: 2px;
-            position: absolute;
-            bottom: 5px;
-            width: 750px;
-            height: 48.125px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 4px;
-            box-sizing: border-box;
-            z-index: 3;
-        }
-
-        #upleft_wrap {
-
-            width: 750px;
-            height: 421.875px;
-            position: relative;
-
-        }
-
-        #new_text {
-            white-space: nowrap;
-            margin: 18px 0 0;
-            font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
-            font-size: 20px;
-            font-weight: 400;
-            line-height: 1.55;
-            letter-spacing: 1.3px;
-            color: #cdf4f4;
-            text-shadow: none;
-            white-space: pre-wrap;
-            display: flex;
-            align-items: center;
-            width: 800px;
-            pointer-events: none;
-
-        }
-
-        #new_change {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-
-        }
-
-        .dot-group {
-            display: flex;
-            gap: 10px;
-        }
+/* 左中部分的核心文字 */
 
 
 
-        .dot {
-            cursor: pointer;
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: #cccccc;
-            border: 1px solid rgba(255, 255, 255, 0.4);
-        }
 
-        .dot:hover {
-            background: #9a8989;
-            border-radius: 50%;
+#new_bottom {
+    padding-left: 50px;
+    letter-spacing: 2px;
+    position: absolute;
+    bottom: 5px;
+    width: 750px;
+    height: 48.125px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    box-sizing: border-box;
+    z-index: 3;
+}
+
+#upleft_wrap {
+
+    width: 750px;
+    height: 421.875px;
+    position: relative;
+
+}
+
+#new_text {
+    margin: 18px 0 0;
+    font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.55;
+    letter-spacing: 1.3px;
+    color: #cdf4f4;
+    text-shadow: none;
+    white-space: pre-wrap;
+    display: flex;
+    align-items: center;
+    width: 800px;
+    pointer-events: none;
+
+}
+
+#new_change {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.dot-group {
+    display: flex;
+    gap: 10px;
+}
 
 
-        }
 
-        .dot.active {
-            width: 28px;
-            height: 14px;
-            border-radius: 999px;
-            background: #fa0303;
-            box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
-        }
+.dot {
+    cursor: pointer;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #cccccc;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
 
-        /* 左侧新闻 */
+.dot:hover {
+    background: #9a8989;
+    border-radius: 50%;
+
+
+}
+
+.dot.active {
+    width: 28px;
+    height: 14px;
+    border-radius: 999px;
+    background: #fa0303;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.35);
+}
+
+/* 左侧新闻 */
 
 
 
 
 
-        /* 新闻 */
+/* 新闻 */
 
-        .bottomword p {
-            margin: 0;
-            padding-left: 20px;
-            border-left: 3px solid #185FA5;
-            font-size: 18px;
-            line-height: 2;
-            color: #2C2C2A;
-            text-align: justify;
-            padding-right: 18px;
-        }
+.bottomword p {
+    margin: 0;
+    padding-left: 20px;
+    border-left: 3px solid #185FA5;
+    font-size: 18px;
+    line-height: 2;
+    color: #2C2C2A;
+    text-align: justify;
+    padding-right: 18px;
+}
 
-        .bottomword {
-            flex: 1 1 45%;
-            display: flex;
-            align-items: center;
+.bottomword {
+    flex: 1 1 45%;
+    display: flex;
+    align-items: center;
 
-        }
+}
 
-        /*页脚*/
-        .footer {
-            background-color: #5083d0;
-            color: #fff;
-            margin-top: 60px;
-            padding: 40px 20px 20px;
-        }
+/*页脚*/
+.footer {
+    background-color: #5083d0;
+    color: #fff;
+    margin-top: 60px;
+    padding: 40px 20px 20px;
+}
 
-        .footer-box {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
+.footer-box {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    flex-wrap: wrap;
+}
 
-        .footer-word h4 {
-            color: #cccccc;
-            margin-bottom: 16px;
-        }
+.footer-word h4 {
+    color: #cccccc;
+    margin-bottom: 16px;
+}
 
-        .footer-word a {
-            display: block;
-            color: #cccccc;
-            text-decoration: none;
-            margin-bottom: 8px;
-        }
+.footer-word a {
+    display: block;
+    color: #cccccc;
+    text-decoration: none;
+    margin-bottom: 8px;
+}
 
-        .footer-word a:hover {
-            color: #ff9b42;
-        }
+.footer-word a:hover {
+    color: #ff9b42;
+}
 
-        .footer-word p {
-            color: #cccccc;
-            line-height: 1.6;
-        }
+.footer-word p {
+    color: #cccccc;
+    line-height: 1.6;
+}
 
-        .footer-bottom {
-            text-align: center;
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid #444;
-            color: #aaa;
-            font-size: 14px;
-        }
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    color: #aaa;
+    font-size: 14px;
+}
 
 
-        /* 其他版面样式 */
+/* 其他版面样式 */

@@ -3,8 +3,59 @@ let judge_video = 0;
 let lastY = 0;
 let guide = document.querySelector('#guide');
 let title = document.querySelector('#title');
+let video = document.querySelector('.guide-video');
+// 改变顶部栏的颜色
+const canvas = document.createElement('canvas');
+// true那一行是方便快速渲染，更改了识别的方式
+const ctx = canvas.getContext('2d', { willReadFrequently: true });
+canvas.width = 50;
+canvas.height = 50;
+
+function checkBrightness() {
+
+    // 先清理画布
+    ctx.clearRect(0, 0, canvas.width, canvas.height * 0.2);
+    // 创建画布，读取这时的颜色
+    ctx.drawImage(video, 0, 0, canvas.width, canvas.height * 0.2);
+    // 读取画布上现在的颜色
+    const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height * 0.2).data;
+    let totalBrightness = 0;
+    let pixelCount = imageData.length / 4;
+
+    for (let i = 0; i < imageData.length; i += 4) {
+        const r = imageData[i];
+        const g = imageData[i + 1];
+        const b = imageData[i + 2];
+
+        // 计算亮度的公式，累加后算平均值
+        totalBrightness += (r * 0.299 + g * 0.587 + b * 0.114);
+    }
+    const avgBrightness = totalBrightness / pixelCount;
+    const avg = avgBrightness / 255;
+
+    title.style.setProperty('--transparent', 0.2 * avg);
+    requestAnimationFrame(checkBrightness);
+
+}
+requestAnimationFrame(checkBrightness);
+
+
+
+
 // 判断新闻界面的位置让顶部导航栏变色
 let news = document.querySelector('#new');
+let slide_introduction = document.querySelector('#slide_introduction');
+// 演示显现箭头
+let timer_logo = null;
+video.addEventListener('mousemove', () => {
+    slide_introduction.style.opacity = 1;
+    clearTimeout(timer); // 每次移动，清空旧计时器，重新计时
+    timer_logo = setTimeout(() => {
+        slide_introduction.style.opacity = 0;
+    }, 2000)
+})
+
+
 
 window.addEventListener('scroll', () => {
     const rect = news.getBoundingClientRect();
@@ -17,23 +68,26 @@ window.addEventListener('scroll', () => {
     if (offsetY <= 80 && isUp) {
         guide.style.height = "56.25vw";
         judge_video = 1;
+        slide_introduction.style.opacity = 1;
     }
     if (judge_video === 1 && isDown) {
         judge_video = 0;
-        guide.style.height = "35vw";
+        guide.style.height = "25vw";
+        slide_introduction.style.opacity = 0;
+
     }
 
     if (isDown) {
         title.style.visibility = 'hidden';
     } else {
-        title.style.visibility= 'visible';
+        title.style.visibility = 'visible';
     }
 
     if (rect.top - 50 <= 0) {
-        title.style.background = "linear-gradient(to right, #0f1439, #1a2460, #0f1439)";
+        title.classList.add('is_brightness');
     }
     else {
-        title.style.background = "rgba(255, 255, 255, 0.08)"
+        title.classList.remove('is_brightness')
     }
 });
 
@@ -148,11 +202,11 @@ const jump_distance = window.innerWidth * (0.5625 - 0.35);
 function jump(id) {
     const gogogo = document.querySelector(id);
     if (!gogogo) return;
-    const jump_distance = window.innerWidth * (0.5625 - 0.35);
+    const jump_distance = window.innerWidth * (0.5625 - 0.25);
 
     if (judge_video === 1) {
         judge_video = 0;
-        guide.style.height = "35vw";
+        guide.style.height = "25vw";
         // 收缩分支：当前是展开状态，减掉视频缩长度补偿
         const rect = gogogo.getBoundingClientRect();
         const targetY = rect.top + window.scrollY - jump_distance - 100;
