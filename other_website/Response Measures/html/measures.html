@@ -5,218 +5,211 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>常见灾害的应急措施</title>
-    <script type="text/javascript" src="./01.js"></script>
- <link rel="stylesheet" href="../css/measures.css">
+    <script type="text/javascript" src="../js/measures.js"></script>
+    <link rel="stylesheet" href="../css/measures.css">
 </head>
 
 <body>
-    <div class="body">
-        <!-- <div class="head" id="head"></div>1111 -->
-        <div class="neck-back">
-            <div class="neck">
-                <div class="box">
-                    <div class="block"><a href="../../../main_website/html/main_web.html"> ←回到首页</a></div>
-                </div>
-                <div class="box">
-                    <div class="block"><a href="#classical"> 经典灾害</a></div>
-                    <div class="block"><a href="#common"> 常见灾害</a></div>
-                </div>
-
-                <!-- <div class="block"><a href="#marine">海洋灾害</a></div>
-                <div class="block"><a href="#biological">生物灾害</a></div> -->
+<div class="body">
+    <!-- <div class="head" id="head"></div>1111 -->
+    <div class="neck-back">
+        <div class="neck">
+            <div class="box">
+                <div class="block"><a href="../../../main_website/html/main_web.html"> ←回到首页</a></div>
             </div>
-        </div>
-        <div class="main" id="classical">
-
-            <div class="classical box">
-                <div class="classical-title title">
-                    经典灾害
-                </div>
-
-                <div class="main">
-                    <div class="classical-left">
-                        <div class="classical-imgs">
-                            <img src="../img/water2.jpg" class="img1 active">
-                            <img src="../img/地震.jpg" class="img2">
-                            <img src="../img/台风.jpg" class="img3">
-                            <img src="../img/泥石流.jpg" class="img4">
-                        </div>
-                        <div class="classical-bottom">
-                            <div class="classical-button button1 active" onclick="showText(1)">洪涝</div>
-                            <div class="classical-button button2" onclick="showText(2)">地震</div>
-                            <div class="classical-button button3" onclick="showText(3)">台风</div>
-                            <div class="classical-button button4" onclick="showText(4)">泥石流</div>
-                        </div>
-                    </div>
-
-                    <div class="classical-texts">
-                        <div class="classical-text text1 active">
-                            <div class="classical-text-1 block">
-                                <p class="p1">一、汛前早准备：</p>
-                                <p class="p2">
-                                    关注雨情水情预报，熟悉隐患点和转移路线；低洼家庭备好简易救生器材，保持通讯畅通；撤离时关掉煤气阀和电源总开关，听从指挥、团结互助，险情未解除不擅自返回。</p>
-                            </div>
-                            <div class="classical-text-2 block">
-                                <p class="p1">二、洪来快登高：</p>
-                                <p class="p2">
-                                    就近向山坡、高地、楼房高层、屋顶、大树转移；不安全时用门板、桌椅、泡沫塑料扎筏逃生；被围困尽快联系防汛部门报方位。不游泳逃生、不爬电线杆铁塔、不爬泥坯房顶，远离断落电线防触电。
-                                </p>
-                            </div>
-                            <div class="classical-text-3 block">
-                                <p class="p1">三、溺水巧自救：</p>
-                                <p class="p2">
-                                    不熟水性取仰卧位、头后仰露鼻呼吸，呼气浅吸气深，不慌张不乱扑；小腿抽筋保持镇静，仰泳位脚趾向背侧弯曲缓解后慢游上岸；救人从其后方出手，或投木板、救生圈、长杆、泡沫让其攀扶。灾后做好卫生防疫。
-                                </p>
-                            </div>
-                        </div>
-                        <div class="classical-text text2">
-                            <div class="classical-text-1 block">
-                                <p class="p1">一、震时先躲，护头避险:</p>
-                                <p class="p2">
-                                    晃动时不要跑、不乘电梯、不跳楼。室内躲坚固桌下或承重墙内墙角，护住头颈，远离窗户和易坠物；户外远离建筑物、电线杆、广告牌，山区防落石，海边防海啸向高处转移；车内停在开阔地，留在车内。
-                                </p>
-                            </div>
-                            <div class="classical-text-2 block">
-                                <p class="p1">二、震后快撤，防次生灾害:</p>
-                                <p class="p2">
-                                    待震动减弱或停止后再撤离，走楼梯、护头、不拥挤，前往空旷地带，警惕余震。确认安全后关闭电源燃气（闻到燃气味不要开关电器）；检查伤情，重伤者不随意搬动；用手机报平安，收听官方信息。
-                                </p>
-                            </div>
-                            <div class="classical-text-3 block">
-                                <p class="p1">三、被困冷静，科学求救:</p>
-                                <p class="p2">
-                                    清理口鼻灰尘、捂住口鼻，节约体力和水源，敲击管道墙体发出求救信号，不要长时间大声呼喊；向有光、有风方向移动但避免盲目挖掘。互救时先近后远、先易后难，先让被困者头部暴露，避免尖锐工具和二次伤害，重伤员平卧搬运。
-                                </p>
-                            </div>
-
-                        </div>
-                        <div class="classical-text text3">
-                            <div class="classical-text-1 block">
-                                <p class="p1">一、台风前早防备</p>
-                                <p class="p2">
-                                    关注台风走向，及时转移避险；加固空调外挂和高空设施，阳台花盆移入室内；门窗捆紧拴牢，必要时加钉木板；检查线路，备好手电、饮水和食物，停止露天集会与大型活动。</p>
-                            </div>
-                            <div class="classical-text-2 block">
-                                <p class="p1">二、台风时莫外出</p>
-                                <p class="p2">
-                                    不在玻璃门窗、危棚简屋、广告牌下逗留，避免在河湖海堤和桥上行走；留守单位备好沙袋、手电、雨衣等物资，提前防淹防水，尽量待在安全处，发现险情及时关电源。</p>
-
-                            </div>
-                            <div class="classical-text-3 block">
-                                <p class="p1">三、台风后防次生</p>
-                                <p class="p2">
-                                    不碰断落电线，远离断点并报修；清垃圾、消积水，做好环境消杀；不吃被水淹过或霉变食物，不喝生水；防蚊虫叮咬，外出穿长袖涂驱避剂；不急着回家，等安全后再返；不盲目开车进山，防滑坡泥石流。
-                              
-
-                            </div>
-                        </div>
-                        <div class="classical-text text4">
-                            <div class="classical-text-1 block">
-                                <p class="p1">一、认准预警早撤离</p>
-                                <p class="p2">
-                                    发现山沟轰鸣、河水暴涨变浑、漂来树枝石块，或山坡裂缝、树木倾斜、动物惊慌等征兆，立即撤离、不要犹豫；雨季避免进入沟谷、河道、陡坡，关注预报预警，熟悉逃生路线，备好应急包。
-                                </p>
-                            </div>
-                            <div class="classical-text-2 block">
-                                <p class="p1">二、垂直方向跑高处</p>
-                                <p class="p2">
-                                    立即沿泥石流方向的垂直方向向两侧高处跑，越高越安全；绝不能顺山谷往下跑，不在沟口、河道、桥下、低洼处停留；来不及远离时找大岩石、背坡等坚固掩体，避开可能倒塌的建筑和电线杆；驾车遇险立即弃车逃生。
-                                </p>
-                            </div>
-                            <div class="classical-text-3 block">
-                                <p class="p1">三、不贪财物防二次</p>
-                                <p class="p2">
-                                    不上树躲避（泥石流会连根卷走树木），不躲在陡坡厚土层低凹处或乱石堆后，不贪恋财物返回取物，不在沟口围观；灾后不立即返回现场，等官方确认安全，防二次泥石流和滑坡。
-                                </p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
+            <div class="box">
+                <div class="block"><a href="#classical"> 经典灾害</a></div>
+                <div class="block"><a href="#common"> 常见灾害</a></div>
             </div>
-        </div>
-        <div class="main" id="common">
-            <div class="measure box">
-                <div class="common-title title">
-                    常见灾害
-                </div>
-                <div class="common-box">
-                    <div class="block">
-                        <div class="common-card"> <img src="../img/暴雨.jpg">
-                            <div class="common-littieTitle">暴雨</div>
-                        </div>
-                        <div class="common-text">
 
-                            <p class="p1">暴雨避险三要点：</p>
-                            <div>
-                                <p class="p2">1.少出门绕积水，防坠窨井</p>
-                                <p class="p2">2.室外水进屋，立即断电源</p>
-                                <p class="p2">3.低洼危房早转移，防倒塌</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="block">
-                        <div class="common-card"> <img src="../img/火灾.jpg">
-                            <div class="common-littieTitle">火灾</div>
-                        </div>
-                        <div class="common-text">
-
-                            <p class="p1">火灾避险三要点：</p>
-                            <div>
-                                <p class="p2">1.小火快灭，楼道浓烟快关门</p>
-                                <p class="p2">2.湿巾捂鼻，低姿沿墙走楼梯</p>
-                                <p class="p2">3.身上着火，就地打滚不跳楼</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="block">
-                        <div class="common-card"> <img src="../img/干旱.jpg">
-                            <div class="common-littieTitle">干旱</div>
-                        </div>
-                        <div class="common-text">
-                            <p class="p1">干旱避险三要点：</p>
-                            <div>
-                                <p class="p2">1.优先保饮水，适当储水备急</p>
-                                <p class="p2">2.关键期精准灌溉，避免漫灌</p>
-                                <p class="p2">3.防旱涝急转，提前疏通排水</p>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="block">
-                        <div class="common-card"> <img src="../img/冰雹.jpg">
-                            <div class="common-littieTitle">冰雹</div>
-                        </div>
-                        <div class="common-text">
-
-                            <p class="p1">冰雹避险三要点：</p>
-                            <div>
-                                <p class="p2">1.关门窗，远离玻璃和阳台</p>
-                                <p class="p2">2.户外半蹲，抱头寻找坚固处</p>
-                                <p class="p2">3.行车进库，遇积水熄火弃车</p>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-
-        <!-- <div class="button box1"><a href="#head">置顶</a>
-
-        </div>
-        <div class="button box2"><a href="#foot">底部</a>
-
-        </div> -->
-
-        <div class="foot" id="foot">
-            联系方式
+            <!-- <div class="block"><a href="#marine">海洋灾害</a></div>
+            <div class="block"><a href="#biological">生物灾害</a></div> -->
         </div>
     </div>
-    <script src="../js/measures.js"></script>
+    <div class="main" id="classical">.
+
+        <div class="classical box">
+            <div class="classical-title title">
+                经典灾害
+            </div>
+            <div class="main">
+                <div class="classical-left">
+                    <div class="classical-imgs">
+                        <img src="../img/flood.jpg" class="img1 active" alt="flood" >
+                        <img src="../img/earthquake.jpg" class="img2" alt="earthquake">
+                        <img src="../img/typhoon.jpg" class="img3" alt="typhoon">
+                        <img src="../img/debrisFlow.jpg" class="img4" alt="debrisFlow">
+                    </div>
+                    <div class="classical-bottom">
+                        <div class="classical-button button1 active" onclick="showText(1)">洪涝</div>
+                        <div class="classical-button button2" onclick="showText(2)">地震</div>
+                        <div class="classical-button button3" onclick="showText(3)">台风</div>
+                        <div class="classical-button button4" onclick="showText(4)">泥石流</div>
+                    </div>
+                </div>
+                <div class="classical-texts">
+                    <div class="classical-text text1 active">
+                        <div class="classical-text-1 block">
+                            <p class="p1">一、汛前早准备：</p>
+                            <p class="p2">
+                                关注预报，熟悉隐患点和转移路线；低洼家庭备好简易救生器材，保持通讯畅通；撤离时关掉煤气阀和电源总开关，听从指挥、团结互助，险情未解除不擅自返回。</p>
+                        </div>
+                        <div class="classical-text-2 block">
+                            <p class="p1">二、洪来快登高：</p>
+                            <p class="p2">
+                                就近向高处转移；不安全时用门板、桌椅、泡沫塑料扎筏逃生；被围困尽快联系防汛部门报方位。不游泳逃生、不爬电线杆铁塔、不爬泥坯房顶，远离断落电线防触电。
+                            </p>
+                        </div>
+                        <div class="classical-text-3 block">
+                            <p class="p1">三、溺水巧自救：</p>
+                            <p class="p2">
+                                不熟水性取仰卧位、头后仰露鼻呼吸，不慌张不乱扑；小腿抽筋保持镇静，缓解后慢游上岸；救人从其后方出手，或投木板、救生圈、长杆、泡沫让其攀扶。灾后做好卫生防疫。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="classical-text text2">
+                        <div class="classical-text-1 block">
+                            <p class="p1">一、震时先躲，护头避险:</p>
+                            <p class="p2">
+                                晃动时不要跑、不乘电梯、不跳楼。室内躲坚固桌下或承重墙内墙角，护住头颈，远离窗户和易坠物；户外远离建筑物、电线杆、广告牌，山区防落石，海边防海啸向高处转移；车内停在开阔地，留在车内。
+                            </p>
+                        </div>
+                        <div class="classical-text-2 block">
+                            <p class="p1">二、震后快撤，防次生灾害:</p>
+                            <p class="p2">
+                                待震动减弱或停止后再撤离，走楼梯、护头、不拥挤，前往空旷地带，警惕余震。确认安全后关闭电源燃气（闻到燃气味不要开关电器）；检查伤情，重伤者不随意搬动；用手机报平安，收听官方信息。
+                            </p>
+                        </div>
+                        <div class="classical-text-3 block">
+                            <p class="p1">三、被困冷静，科学求救:</p>
+                            <p class="p2">
+                                捂住口鼻，节约体力，敲击管道墙体发出求救信号，不要长时间大声呼喊；向有光、有风方向移动但避免盲目挖掘。互救时先近后远、先易后难，先让被困者头部暴露，避免尖锐工具和二次伤害，重伤员平卧搬运。
+                            </p>
+                        </div>
+                    </div>
+                    <div class="classical-text text3">
+                        <div class="classical-text-1 block">
+                            <p class="p1">一、台风前早防备</p>
+                            <p class="p2">
+                                关注台风走向，及时转移避险；加固空调外挂和高空设施，阳台花盆移入室内；门窗捆紧拴牢，必要时加钉木板；检查线路，备好手电、饮水和食物，停止露天集会与大型活动。</p>
+                        </div>
+                        <div class="classical-text-2 block">
+                            <p class="p1">二、台风时莫外出</p>
+                            <p class="p2">
+                                不在玻璃门窗、危棚简屋、广告牌下逗留，避免在河湖海堤和桥上行走；留守单位备好沙袋、手电、雨衣等物资，提前防淹防水，尽量待在安全处，发现险情及时关电源。</p>
+                        </div>
+                        <div class="classical-text-3 block">
+                            <p class="p1">三、台风后防次生</p>
+                            <p class="p2">
+                                不碰断落电线，远离断点并报修；清垃圾、消积水，做好环境消杀；不吃被水淹过或霉变食物，不喝生水；防蚊虫叮咬，外出穿长袖涂驱避剂；不急着回家，等安全后再返；不盲目开车进山，防滑坡泥石流。
+                        </div>
+                    </div>
+                    <div class="classical-text text4">
+                        <div class="classical-text-1 block">
+                            <p class="p1">一、认准预警早撤离</p>
+                            <p class="p2">
+                                发现山沟轰鸣、河水暴涨变浑、漂来树枝石块，或山坡裂缝、树木倾斜、动物惊慌等征兆，立即撤离、不要犹豫；雨季避免进入沟谷、河道、陡坡，关注预报预警，熟悉逃生路线，备好应急包。
+                            </p>
+                        </div>
+                        <div class="classical-text-2 block">
+                            <p class="p1">二、垂直方向跑高处</p>
+                            <p class="p2">
+                                立即沿泥石流方向的垂直方向向两侧高处跑，越高越安全；绝不能顺山谷往下跑，不在沟口、河道、桥下、低洼处停留；来不及远离时找大岩石、背坡等坚固掩体，避开可能倒塌的建筑和电线杆；驾车遇险立即弃车逃生。
+                            </p>
+                        </div>
+                        <div class="classical-text-3 block">
+                            <p class="p1">三、不贪财物防二次</p>
+                            <p class="p2">
+                                不上树躲避（泥石流会连根卷走树木），不躲在陡坡厚土层低凹处或乱石堆后，不贪恋财物返回取物，不在沟口围观；灾后不立即返回现场，等官方确认安全，防二次泥石流和滑坡。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main" id="common">
+        <div class="measure box">
+            <div class="common-title title">
+                常见灾害
+            </div>
+            <div class="common-box">
+                <div class="block common-click">
+                    <div class="common-card"> <img src="../img/rainstorm.jpg" alt="rainstorm">
+                        <div class="common-littieTitle">暴雨</div>
+                    </div>
+                    <div class="common-text">
+
+                        <p class="p1">暴雨避险三要点：</p>
+                        <div>
+                            <p class="p2">1.少出门绕积水，防坠窨井</p>
+                            <p class="p2">2.室外水进屋，立即断电源</p>
+                            <p class="p2">3.低洼危房早转移，防倒塌</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="block common-click">
+                    <div class="common-card"> <img src="../img/fire.jpg" alt="fire">
+                        <div class="common-littieTitle">火灾</div>
+                    </div>
+                    <div class="common-text">
+
+                        <p class="p1">火灾避险三要点：</p>
+                        <div>
+                            <p class="p2">1.小火快灭，楼道浓烟快关门</p>
+                            <p class="p2">2.湿巾捂鼻，低姿沿墙走楼梯</p>
+                            <p class="p2">3.身上着火，就地打滚不跳楼</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="block common-click">
+                    <div class="common-card"> <img src="../img/drought.jpg" alt="drought">
+                        <div class="common-littieTitle">干旱</div>
+                    </div>
+                    <div class="common-text">
+                        <p class="p1">干旱避险三要点：</p>
+                        <div>
+                            <p class="p2">1.优先保饮水，适当储水备急</p>
+                            <p class="p2">2.关键期精准灌溉，避免漫灌</p>
+                            <p class="p2">3.防旱涝急转，提前疏通排水</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="block common-click">
+                    <div class="common-card"> <img src="../img/hail.jpg" alt="hail">
+                        <div class="common-littieTitle">冰雹</div>
+                    </div>
+                    <div class="common-text">
+
+                        <p class="p1">冰雹避险三要点：</p>
+                        <div>
+                            <p class="p2">1.关门窗，远离玻璃和阳台</p>
+                            <p class="p2">2.户外半蹲，抱头寻找坚固处</p>
+                            <p class="p2">3.行车进库，遇积水熄火弃车</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- <div class="button box1"><a href="#head">置顶</a>
+
+    </div>
+    <div class="button box2"><a href="#foot">底部</a>
+
+    </div> -->
+
+    <div class="foot" id="foot">
+        联系方式
+    </div>
+</div>
+<script src="../js/measures.js"></script>
 
 </body>
 
