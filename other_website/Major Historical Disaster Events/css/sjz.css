@@ -1,251 +1,334 @@
-    * {
-            padding: 0;
-            margin: 0;
-        }
+* {
+    padding: 0;
+    margin: 0;
+}
 
-        .shell {
-            width: 100%;
-            position: relative;
-            padding: 50px 0;
-            transition: 0.3s ease 0s;
-            background-attachment: fixed;
-            background-size: cover;
-        }
+.shell {
+    width: 100%;
+    position: relative;
+    padding: 50px 0;
+    transition: 0.3s ease 0s;
+    background-attachment: fixed;
+    background-size: cover;
+    background-image: url("../photo/04-1954flood-1.png");
+}
 
-        .shell::before {
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(99, 99, 99, 0.8);
-            content: "";
-        }
+.shell::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 99, 99, 0.8);
+    content: "";
+}
 
-        .header {
-            width: 100%;
-            text-align: center;
-            margin-bottom: 80px;
-            position: relative;
-        }
+.header {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 80px;
+    position: relative;
+}
 
-        .title {
-            color: #fff;
-            font-size: 46px;
-            font-weight: normal;
-            margin: 0;
-        }
+.title {
+    color: #fff;
+    font-size: 46px;
+    font-weight: normal;
+    margin: 0;
+}
 
-        .timeline {
-            display: flex;
-            margin: 0 auto;
-            flex-wrap: wrap;
-            flex-direction: column;
-            max-width: 700px;
-            position: relative;
-        }
+.timeline {
+    display: flex;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    max-width: 1000px;
+    position: relative;
+}
 
-        .content-title {
-            font-weight: normal;
-            font-size: 66px;
-            margin: -10px 0 0 0;
-            transition: 0.4s;
-            padding: 0 10px;
-            box-sizing: border-box;
-            color: #fff;
-        }
+.content-title {
+    font-weight: normal;
+    font-size: 66px;
+    margin: -10px 0 0 0;
+    transition: 0.4s;
+    padding: 0 10px;
+    box-sizing: border-box;
+    color: #fff;
+}
 
-        .content-desc {
-            margin: 0;
-            font-size: 20px;
-            box-sizing: border-box;
-            color: rgba(255, 255, 255, 0.7);
-        }
+.content-desc {
+    margin: 0;
+    font-size: 20px;
+    box-sizing: border-box;
+    font-weight: normal;
+    text-indent: 2em;
+    color: rgba(255, 255, 255, 0.765);
+    line-height: 1.8;
+}
 
-        .timeline::before {
-            position: absolute;
-            left: 50%;
-            width: 2px;
-            height: 100%;
-            margin-left: -1px;
-            content: "";
-            background: rgba(255, 255, 255, 0.07);
-        }
+.source {
+    margin: 16px 0 0;
+    padding-top: 12px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.14);
+    font-size: 14px;
+    line-height: 1.7;
+    text-indent: 0;
+    color: rgba(255, 255, 255, 0.48);
+}
+.source a {
+    color: rgba(255, 255, 255, 0.68);
+    text-decoration: none;
+    border-bottom: 1px dotted rgba(255, 255, 255, 0.3);
+}
+.source a:hover { color: #fff; border-bottom-color: #fff; }
 
-        .item {
-            padding: 40px 0;
-            opacity: 0.3;
-            filter: blur(2px);
-            transition: 0.5s;
-            box-sizing: border-box;
-            width: calc(50% - 40px);
-            display: flex;
-            position: relative;
-            transform: translateY(-80px);
-            align-self: flex-start;
-        }
+.timeline::before {
+    position: absolute;
+    left: 50%;
+    width: 6px;
+    height: 100%;
+    border-radius: 5px;
+    margin-left: -3px;
+    content: "";
+    background: rgba(255, 255, 255, 0.295);
+}
 
-        .item:nth-child(even) {
-            align-self: flex-end;
-        }
+.item {
+    padding: 40px 0;
+    opacity: 0.3;
+    filter: blur(2px);
+    transition: 0.5s;
+    box-sizing: border-box;
+    width: calc(50% - 40px);
+    display: flex;
+    position: relative;
+    transform: translateY(-80px);
+    align-self: flex-start;
+}
 
-        .item::before {
-            content: attr(data-text);
-            position: absolute;
-            /* 宽度不再跟着 .item 走：由文字自己撑开，永远单行 */
-            width: auto;
-            white-space: nowrap;
-            top: 70%;
-            margin-top: -5px;
+.item:nth-child(even) {
+    align-self: flex-end;
+}
 
-            /* 原来是一句 font: 900 25px ''; —— 字体族写成空字符串，
-               浏览器只能回退到默认字体（中文多为宋体），和正文不是同一套字。
-               拆成独立属性，并指定和正文一致的字体栈。 */
-            font-family: "Microsoft YaHei", "微软雅黑", "PingFang SC", "Noto Sans SC", sans-serif;
-            font-size: 28px;
-            font-weight: 700;
-            letter-spacing: 3px;
-            line-height: 1.5;
+.item::before {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+            linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)) left top / 20px 2px no-repeat,
+            linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)) left top / 2px 20px no-repeat,
+            linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)) right bottom / 20px 2px no-repeat,
+            linear-gradient(rgba(255, 255, 255, .7), rgba(255, 255, 255, .7)) right bottom / 2px 20px no-repeat;
+    content: attr(data-text);
+    position: absolute;
+    color: rgba(255, 255, 255, 0.7);
+    font: 900 30px sans-serif;
+    white-space: normal;
+    line-height: 1.25;
+    overflow-wrap: anywhere;
+    box-sizing: border-box;
+    top: 70%;
+    margin-top: -5px;
+    padding: 20px;
+    opacity: 0;
+    left: calc(100% + 56px);
+    right: auto;
+    letter-spacing: 5px;
+    width: max-content;
+    max-width: calc(100% - 16px);
+    background-color: #ffffff15;
+}
 
-            color: rgba(255, 255, 255, 0.92);
+.item:nth-child(even)::before {
+    left: auto;
+    right: calc(100% + 56px);
+    text-align: right;
+    padding: 20px;
+    border-left: none;
+}
 
-            /* 以左边缘为锚点向右生长：标题再长也只会往右延伸，不会顶到中轴 */
-            right: auto;
-            left: calc(100% + 88px);
-            padding: 18px 24px;
-            /* 必须加：伪元素默认 content-box，加 padding 会把宽度撑出 .item */
-            box-sizing: border-box;
+.item[data-text^="郴州、衡阳"]::before {
+    white-space: pre-line;
+}
 
-            /* 左上 + 右下 两个角框，四个臂统一 32px，最后一条是极淡底色。
-               currentColor 会跟随上面的 color，改颜色时角框一起变。
-               这里不再用 border 当竖线 —— border 是整条卡片高，会让两个角的
-               竖臂一长一短。四条臂全交给 gradient，两个 L 就一样大。 */
-            background:
-                linear-gradient(currentColor, currentColor) left top / 32px 2px no-repeat,
-                linear-gradient(currentColor, currentColor) left top / 2px 32px no-repeat,
-                linear-gradient(currentColor, currentColor) right bottom / 32px 2px no-repeat,
-                linear-gradient(currentColor, currentColor) right bottom / 2px 32px no-repeat,
-                rgba(255, 255, 255, 0.05);
+.item--active {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0px);
+}
 
-            opacity: 0;
-        }
+.item--active:before {
+    top: 50%;
+    transition: 0.3s all 0.2s;
+    opacity: 1;
+}
 
-        .item:nth-child(even)::before {
-            /* 镜像：以右边缘为锚点向左生长 */
-            left: auto;
-            right: calc(100% + 88px);
-            text-align: right;
-            padding: 18px 24px;
+.item--active .content-title {
+    margin: -50px 0 20px 0;
+}
 
-            /* 镜像：右上 + 左下 两个角框，四条臂同样都是 32px */
-            background:
-                linear-gradient(currentColor, currentColor) right top / 32px 2px no-repeat,
-                linear-gradient(currentColor, currentColor) right top / 2px 32px no-repeat,
-                linear-gradient(currentColor, currentColor) left bottom / 32px 2px no-repeat,
-                linear-gradient(currentColor, currentColor) left bottom / 2px 32px no-repeat,
-                rgba(255, 255, 255, 0.05);
-        }
+.img {
+    max-width: 100%;
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
 
-        .item--active {
-            opacity: 1;
-            transform: translateY(0);
-            filter: blur(0px);
-        }
+.subtitle {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 16px;
+    letter-spacing: 5px;
+    margin: 10px 0 0 0;
+    font-weight: normal;
+}
 
-        .item--active:before {
-            top: 50%;
-            transition: 0.3s all 0.2s;
-            opacity: 1;
-        }
+.footer {
+    padding: 95px 0;
+    text-align: center;
+}
 
-        .item--active .content-title {
-            margin: -50px 0 20px 0;
-        }
+.footer a {
+    color: #999;
+    display: inline-block;
+}
 
-        .img {
-            max-width: 100%;
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
-        }
+#dibu {
+    width: 100vw;
+    height: 50vh;
+}
 
-        .subtitle {
-            color: rgba(255, 255, 255, 0.5);
-            font-size: 16px;
-            letter-spacing: 5px;
-            margin: 10px 0 0 0;
-            font-weight: normal;
-        }
+#return {
+    position: absolute;
+    top: 5px;
+    left: 4vw;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0.7);
+}
+#return a {
+    text-decoration: none;
+    color: inherit;
+}
 
-        .footer {
-            padding: 95px 0;
-            text-align: center;
-        }
+#return::before {
+    content: "←";
 
-        .footer a {
-            color: #999;
-            display: inline-block;
-        }
+}
 
-        @media only screen and (max-width:767px) {
-            .item {
-                align-self: baseline !important;
-                width: 100%;
-                padding: 0 30px 150px 80px;
-            }
+#return-top {
+    position: fixed;
+    right: 4vw;
+    bottom: 36px;
+    z-index: 99;
+    width: 48px;
+    height: 48px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    border-radius: 50%;
+    background: rgba(48, 52, 54, 0.82);
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    opacity: 0;
+    transform: translateY(14px) scale(0.9);
+    pointer-events: none;
+    transition: 0.3s;
+}
 
-            .item:before {
-                left: 10px !important;
-                padding: 0 !important;
-                top: 50px;
-                text-align: center !important;
-                width: 60px;
-                border: none !important;
-            }
+#return-top.return-top-active {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    pointer-events: auto;
+}
 
-            .item:last-child {
-                padding-bottom: 40px;
-            }
-        }
+#return-top:hover {
+    background: rgba(68, 72, 74, 0.95);
+    border-color: rgba(255, 255, 255, 0.7);
+    transform: translateY(-3px);
+}
 
-        @media only screen and(max-width:767px) {
-            .timeline:before {
-                left: 40px;
-            }
-        }
+#thingtime {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    right: 0.5vw;
+    top: 14vh;
+    height: 72vh;
+    z-index: 90;
+    width: 9vw;
+    padding: 0;
+    text-align: center;
+}
 
-        #dibu {
-            width: 100vw;
-            height: 50vh;
-        }
+#thingtime-title {
+    border-radius: 20px;
+    color: rgba(255, 255, 255, .75);
+    font-size: 20px;
+    height: 44px;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    background: rgba(26, 28, 30, 0.66);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.28);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
 
-        #return {
-            position: absolute;
-            top: 5px;
-            left: 4vw;
-            font-size: 30px;
-            color: rgba(255, 255, 255, 0.7);
-            position: fixed;
-        }
+#thingtime-content {
+    border-radius: 20px;
+    width: 100%;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    color: rgba(255, 255, 255, .75);
+    background: rgba(26, 28, 30, 0.66);
+    border-right: 1px solid rgba(255, 255, 255, 0.12);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    border-left: 1px solid rgba(255, 255, 255, 0.12);
 
-        #littletitle {
-            position: absolute;
-            top: 5px;
-            right: 4vw;
-            font-size: 30px;
-            color: rgba(255, 255, 255, 0.7);
-        }
+}
 
-        hr {
-            border: 2px solid rgba(0, 0, 0, 0.815);
-            width: 50vw;
-            margin: 0 auto;
-        }
+#thingtime-content ul {
+    width: 100%;
+    height: 98%;
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 10px;
 
-        #return a {
-            text-decoration: none;
-            color: inherit;
-        }
+}
 
-        #return::before {
-            content: "←";
+#thingtime-content ul li:hover {
+    background-color: #ffffff38;
+    cursor: pointer;
 
-        }
+
+}
+
+#thingtime-content ul li.thingtime-item-active {
+    background-color: #fff;
+    color: #222;
+    font-weight: bold;
+}
+
+#thingtime-content li {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#thingtime-content.thingtime-content-hidden {
+    display: none;
+
+}
+
+#arrow {
+    cursor: pointer;
+    position: fixed;
+    padding-left: 10px;
+    right: .5vw;
+    top: 14.9vh;
+}
