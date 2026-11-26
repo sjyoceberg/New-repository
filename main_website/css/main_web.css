@@ -366,8 +366,8 @@ img {
 /* 右侧新闻 */
 .upright {
     background: #f9fafa;
-    width: 410px;
-    height: 421.875px;
+    width: 444px;
+    height: 421.7px;
 
     position: relative;
     border-radius: 12px;
@@ -381,26 +381,14 @@ img {
 #upright_scroll {
     width: 100%;
     height: calc(100% - 70px);
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow:hidden;
     padding-right: 12px;
 
 }
 
-#upright_scroll::-webkit-scrollbar-track {
-    background: transparent;
-}
-
-#upright_scroll::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0);
-    border-radius: 4px;
-    transition: background 0.3s ease;
-}
 
 /* 给滚动时的class：激活 */
-#upright_scroll.active::-webkit-scrollbar-thumb {
-    background: rgba(0, 0, 0, 0.35);
-}
+
 
 .upright h3 {
     color: #8b0000;
@@ -433,9 +421,16 @@ img {
     border-bottom: 1px dashed rgba(139, 0, 0, 0.15);
     transition: background 0.2s ease;
     box-sizing: border-box;
+    justify-content: space-between;
+    display: flex;
 
 }
-
+.upright span{
+    font-size: 13px;
+    color: #0505059c;
+    margin-top: 10px;
+    margin-left: 3px;
+}
 .upright li:last-child {
     border-bottom: none;
 }
@@ -475,8 +470,7 @@ img {
 
 
 /* 左侧新闻 */
-.box1,
-.box2 {
+.box1{
     display: flex;
     /* 水平方向 */
     justify-content: flex-start;
@@ -485,10 +479,19 @@ img {
     gap: 40px;
     position: relative;
 }
-
+.box2 {
+    display: flex;
+    /* 水平方向 */
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin: 20px 15vw;
+    /* 左右间距 */
+    gap: 40px;
+    position: relative;
+}
 .upleft {
-    width: 750px;
-    height: 421.875px;
+    width: 730px;
+    height: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
