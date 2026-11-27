@@ -719,50 +719,81 @@ img {
 
 /*页脚*/
 .footer {
-    background-color: #5083d0;
+    background-color: #151A44;
     color: #fff;
     margin-top: 60px;
     padding: 40px 20px 20px;
+    font-size: 14px;
 }
+
 
 .footer-box {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    gap: 30px;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+}
+
+
+.footer-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* border-bottom: 1px dashed rgba(255, 255, 255, 0.1); */
+    padding-bottom: 12px;
+    width: 100%;
+    padding-bottom: 0;
+}
+
+
+.row-title {
+    color: #E2E8F0;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0;
+    /* width: 120px;
+    flex-shrink: 0; */
+}
+
+
+.row-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 25px;
 }
 
-.footer-word h4 {
-    color: #cccccc;
-    margin-bottom: 16px;
-}
 
-.footer-word a {
-    display: block;
-    color: #cccccc;
+.footer a {
+    color: #E2E8F0;
     text-decoration: none;
-    margin-bottom: 8px;
+    transition: color 0.3s;
 }
 
-.footer-word a:hover {
+.footer a:hover {
     color: #ff9b42;
 }
 
-.footer-word p {
-    color: #cccccc;
-    line-height: 1.6;
+.footer span {
+    color: #E2E8F0;
 }
+
 
 .footer-bottom {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 40px;
     padding-top: 20px;
-    border-top: 1px solid #444;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     color: #aaa;
-    font-size: 14px;
 }
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
 
 
 /* 其他版面样式 */
