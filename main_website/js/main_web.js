@@ -240,12 +240,14 @@ function goTo_other2() {
 
 
 //常见灾害的应急措施
-let now=new Date();
-let year=now.getFullYear();
-let month=now.getMonth()+1;
-let day=now.getDate();
-let lis=year+'-'+month+'-'+day;
-let list=document.querySelectorAll('.news-time');
-list.forEach(item=>{
-    item.innerText=lis;
+let now = new Date();
+let year = now.getFullYear();
+let month = now.getMonth() + 1;
+let day = now.getDate();
+let lis;
+let list = document.querySelectorAll('.news-time');
+list.forEach(item => {
+    day--;
+    lis = year + '-' + month + '-' + day;
+    item.innerText = lis;
 })

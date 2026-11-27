@@ -378,10 +378,33 @@ img {
 
 }
 
+.upright_title {
+    position: relative;
+
+}
+
+.upright_title div a {
+    font-weight: bold;
+    font-size: 14px;
+    padding: 4px 12px;
+    color: #750e0e;
+    border-radius: 14px;
+    text-decoration: none;
+    transition: all 0.2s;
+    position: absolute;
+    right: 3%;
+    top: 20%;
+}
+
+.upright_title div a:hover {
+    color:  #d80e0e;
+
+}
+
 #upright_scroll {
     width: 100%;
     height: calc(100% - 70px);
-    overflow:hidden;
+    overflow: hidden;
     padding-right: 12px;
 
 }
@@ -425,12 +448,14 @@ img {
     display: flex;
 
 }
-.upright span{
+
+.upright span {
     font-size: 13px;
     color: #0505059c;
     margin-top: 10px;
     margin-left: 3px;
 }
+
 .upright li:last-child {
     border-bottom: none;
 }
@@ -450,7 +475,7 @@ img {
 
 }
 
-.upright a::before {
+.upright #upright_scroll a::before {
     content: "";
     position: absolute;
     left: 0;
@@ -470,7 +495,7 @@ img {
 
 
 /* 左侧新闻 */
-.box1{
+.box1 {
     display: flex;
     /* 水平方向 */
     justify-content: flex-start;
@@ -479,6 +504,7 @@ img {
     gap: 40px;
     position: relative;
 }
+
 .box2 {
     display: flex;
     /* 水平方向 */
@@ -489,6 +515,7 @@ img {
     gap: 40px;
     position: relative;
 }
+
 .upleft {
     width: 730px;
     height: 420px;
