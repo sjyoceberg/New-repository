@@ -19,6 +19,61 @@ if (items.length === 0) {
 }
 const activeClass = "item--active";
 
+const thingtimePanel = document.getElementById("thingtime");
+const thingtimeList = document.querySelector("#thingtime ul");
+const knobView = document.getElementById("knob-view");
+const knobDate = document.getElementById("knob-date");
+const knobType = document.getElementById("knob-type");
+const knobPeekPrev = document.getElementById("knob-peek-prev");
+const knobPeekNext = document.getElementById("knob-peek-next");
+let currentIndex = 0;
+let jumpUntil = 0;
+
+function labelOf(item, index) {
+    return (
+        item.dataset.site ||
+        item.querySelector(".content-title")?.textContent.trim() ||
+        `第 ${index + 1} 个事件`
+    );
+}
+function splitLabel(text) {
+    const parts = text.trim().split(/\s+/);
+    const date = parts.shift() || text;
+    return { date: date, type: parts.join(" ") };
+}
+
+function shortLabel(index) {
+    const normalized = (index + items.length) % items.length;
+    const parts = splitLabel(labelOf(items[normalized], normalized));
+    return `${parts.date} ${parts.type}`;
+}
+const thingtimeItems = items.map((item, index) => {
+    const li = document.createElement("li");
+    li.textContent = labelOf(item, index);
+    thingtimeList.appendChild(li);
+    return li;
+});
+
+function updateKnob(index) {
+    const parts = splitLabel(labelOf(items[index], index));
+    knobDate.textContent = parts.date;
+    knobType.textContent = parts.type;
+    knobPeekPrev.textContent = shortLabel(index - 1);
+    knobPeekNext.textContent = shortLabel(index + 1);
+}
+
+function goToIndex(index) {
+    const normalized = (index + items.length) % items.length;
+    const targetTop =
+        items[normalized].getBoundingClientRect().top +
+        window.scrollY -
+        window.innerHeight * 0.18;
+    currentIndex = normalized;
+    jumpUntil = Date.now() + 500;
+    window.scrollTo({ top: targetTop, behavior: "smooth" });
+    updateKnob(normalized);
+}
+
 function setBackground(item) {
     const image = item.querySelector(".img");
     if (!image) {
@@ -36,37 +91,81 @@ function activateItem(activeItem) {
     });
     activeItem.classList.add(activeClass);
 
-    // 让右侧时间轴中的 li 与当前 item 保持同步
+    // 让左侧事件列表与旋钮都和当前 item 保持同步
     const activeIndex = items.indexOf(activeItem);
+    if (Date.now() >= jumpUntil) {
+        currentIndex = activeIndex;
+        updateKnob(activeIndex);
+    }
     thingtimeItems.forEach((li, index) => {
         li.classList.toggle("thingtime-item-active", index === activeIndex);
     });
 }
-const thingtime = document.querySelector("#thingtime ul");
-const thingtimeItems = Array.from(
-    thingtime.querySelectorAll(":scope > li")
-);
+activateItem(items[0]);
+setBackground(items[0]);
 
-thingtime.addEventListener("click", function (e) {
+thingtimeList.addEventListener("click", function (e) {
     const targetLi = e.target.closest("li");//获取点击对象
     const index = thingtimeItems.indexOf(targetLi);//获取点击对象的序号
-    const targetItem = items[index];
-    const targetTop =
-        targetItem.getBoundingClientRect().top + window.scrollY - window.innerHeight * 0.18;
-    window.scrollTo({ top: targetTop, behavior: "smooth" });
+    if (index >= 0) {
+        goToIndex(index);
+    }
 });
-const arrow = document.querySelector("#arrow");
+// const arrow = document.querySelector("#arrow");
 const thingtimeContent = document.querySelector("#thingtime-content");
-arrow.addEventListener("click", function () {
-    thingtimeContent.classList.toggle("thingtime-content-hidden");
-    if (thingtimeContent.classList.contains("thingtime-content-hidden")) {
-        arrow.innerHTML = "◀"
-    }
-    else {
-        arrow.innerHTML = "▶"
-    }
+// arrow.addEventListener("click", function () {
+//     thingtimeContent.classList.toggle("thingtime-content-hidden");
+//     if (thingtimeContent.classList.contains("thingtime-content-hidden")) {
+//         arrow.innerHTML = "◀"
+//     }
+//     else {
+//         arrow.innerHTML = "▶"
+//     }
 
+// });
+const button = document.querySelector("#button");
+let i = 0;
+
+function applyMode(mode) {
+    if (mode === 0) {
+        button.textContent = "列表";
+        thingtimeContent.classList.remove("thingtime-content-hidden");
+        thingtimeList.style.display = "";
+        knobView.classList.remove("knob-view-active");
+        thingtimePanel.classList.remove("thingtime-compact");
+    } else if (mode === 1) {
+        button.textContent = "隐藏";
+        thingtimeContent.classList.add("thingtime-content-hidden");
+        thingtimeList.style.display = "";
+        knobView.classList.remove("knob-view-active");
+        thingtimePanel.classList.remove("thingtime-compact");
+    } else if (mode === 2) {
+        button.textContent = "旋钮";
+        thingtimeContent.classList.remove("thingtime-content-hidden");
+        thingtimeList.style.display = "none";
+        knobView.classList.add("knob-view-active");
+        thingtimePanel.classList.add("thingtime-compact");
+        updateKnob(currentIndex);
+    }
+}
+
+button.addEventListener("click", function () {
+    i++;
+    applyMode(i % 3);
 });
+
+let lastWheel = -Infinity;
+
+thingtimePanel.addEventListener("wheel", function (event) {
+    if (i % 3 !== 2) return;
+    event.preventDefault();
+    const now = Date.now();
+    if (now - lastWheel < 90) return;
+    lastWheel = now;
+    goToIndex(currentIndex + (event.deltaY > 0 ? 1 : -1));
+}, { passive: false });
+
+applyMode(i % 3);
 
 // 更换背景图
 function updateTimeline() {
@@ -107,9 +206,3 @@ function updateTimeline() {
 
 // 更新时间
 window.addEventListener("scroll", updateTimeline);
-
-// 页面首次加载时执行一次初始化：
-// 否则首张内容、背景和右侧时间轴选中状态不会在滚动前设置。
-activateItem(items[0]);
-setBackground(items[0]);
-updatereturnTop();
