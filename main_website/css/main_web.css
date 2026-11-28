@@ -490,7 +490,7 @@ img {
     position: relative;
 }
 .upleft {
-    width: 730px;
+    width: 700px;
     height: 420px;
     display: flex;
     flex-direction: column;
